@@ -5,10 +5,6 @@ using UnityEngine;
 public class Spawn : MonoBehaviour
 {
     public GameObject enemy;
-    void Start()
-    {
-        
-    }
 
     // Update is called once per frame
     void Update()
