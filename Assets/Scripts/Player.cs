@@ -21,7 +21,13 @@ public class Player : MonoBehaviour
 
         if(Input.GetKeyDown(KeyCode.Space))
         {
-            Instantiate(bullet, this.transform.position, Quaternion.identity);
+            // Instantiate(bullet, this.transform.position, Quaternion.identity);
+            GameObject b = Pool.singleton.Get("Bullet");
+            if(b != null)
+            {
+                b.transform.position = this.transform.position;
+                b.SetActive(true);
+            }
         }
     }
 }
