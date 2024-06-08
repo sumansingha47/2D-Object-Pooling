@@ -4,14 +4,20 @@ using UnityEngine;
 
 public class Spawn : MonoBehaviour
 {
-    public GameObject enemy;
+    // public GameObject enemy;
 
     // Update is called once per frame
     void Update()
     {
         if(Random.Range(0, 100) < 5)
         {
-            Instantiate(enemy, this.transform.position + new Vector3(Random.Range(-10, 10), 0, 0), Quaternion.identity);
+            // Instantiate(enemy, this.transform.position + new Vector3(Random.Range(-10, 10), 0, 0), Quaternion.identity);
+            GameObject a = Pool.singleton.Get("Enemy");
+            if(a != null)
+            {
+                a.transform.position = this.transform.position + new Vector3(Random.Range(-10, 10), 0, 0);
+                a.SetActive(true);
+            }
         }
     }
 }
